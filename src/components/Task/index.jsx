@@ -1,6 +1,7 @@
 import style from "./Task.module.scss";
 import classNames from "classnames";
-// import deleteIcon from "../../common/image/deleteBlack24.png";
+import deleteIcon from "../../common/image/delete24.png";
+import doneIcon from "../../common/image/correct24.png";
 
 export default function Task(props) {
   const {
@@ -15,18 +16,18 @@ export default function Task(props) {
 
   return (
     <div className={classNamesAdd}>
-      <p className={style.text}>{`${taskText} ${isDone}`}</p>
+      <p className={style.text}>{taskText}</p>
       {!isDone && (
         <button
           className={style.btn}
           onClick={() => handleClickExecute(taskId)}
         >
-          V
+          <img src={doneIcon} alt="done button" />
         </button>
       )}
 
       <button className={style.btn} onClick={() => handleClickCancle(taskId)}>
-        X
+        <img src={deleteIcon} alt="delete button" />
       </button>
     </div>
   );

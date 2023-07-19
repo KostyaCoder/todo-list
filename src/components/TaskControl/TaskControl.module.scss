@@ -1,4 +1,4 @@
-$colorBtn: rgb(43,108, 236);
+@import "../../common/styles/variables";
 
 .container {
   display: flex;
@@ -21,4 +21,9 @@ $colorBtn: rgb(43,108, 236);
   background-color: $colorBtn;
   border-color: $colorBtn;
   border-radius: 20%;
+}
+
+.btn:hover{
+  color: $colorBtn;
+  background-color: white;
 }
