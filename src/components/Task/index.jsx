@@ -5,7 +5,7 @@ import doneIcon from "../../common/image/correct24.png";
 
 export default function Task(props) {
   const {
-    task: { taskText, id: taskId, isDone },
+    task: { taskText, id, isDone },
     handleClickExecute,
     handleClickCancle,
   } = props;
@@ -20,13 +20,13 @@ export default function Task(props) {
       {!isDone && (
         <button
           className={style.btn}
-          onClick={() => handleClickExecute(taskId)}
+          onClick={() => handleClickExecute(id)}
         >
           <img src={doneIcon} alt="done button" />
         </button>
       )}
 
-      <button className={style.btn} onClick={() => handleClickCancle(taskId)}>
+      <button className={style.btn} onClick={() => handleClickCancle(id)}>
         <img src={deleteIcon} alt="delete button" />
       </button>
     </div>
