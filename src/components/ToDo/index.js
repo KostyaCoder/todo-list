@@ -1,11 +1,7 @@
 import Task from "../Task";
 import TaskControl from "../TaskControl";
 import style from "./ToDo.module.scss";
-import { Form, Formik } from "formik";
 import { useEffect, useState } from "react";
-import { TASK_SCHEMA } from "../../utils/validation/taskValidation";
-
-const initialValues = { task: "" };
 
 export default function ToDo() {
   const [listTasks, setListTasks] = useState([]);
@@ -63,15 +59,9 @@ export default function ToDo() {
   ));
 
   return (
-    <Formik
-      onSubmit={handleClickAdd}
-      initialValues={initialValues}
-      validationSchema={TASK_SCHEMA}
-    >
-      <Form className={style.todo}>
-        <TaskControl />
-        {listComponentTasks}
-      </Form>
-    </Formik>
+    <div className={style.todo}>
+      <TaskControl handleClickAdd={handleClickAdd} />
+      {listComponentTasks}
+    </div>
   );
 }
