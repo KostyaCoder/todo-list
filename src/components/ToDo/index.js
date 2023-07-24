@@ -33,7 +33,7 @@ export default function ToDo() {
     });
 
     updateData(newListTasks);
-    values.task = '';
+    values.task = "";
   };
 
   const handleClickExecute = function (id) {
