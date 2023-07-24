@@ -10,7 +10,7 @@ const initialValues = { task: "" };
 export default function ToDo() {
   const [listTasks, setListTasks] = useState([]);
   useEffect(() => {
-  const listTasksStorage = JSON.parse(localStorage.getItem("listTasks"));
+    const listTasksStorage = JSON.parse(localStorage.getItem("listTasks"));
     if (listTasksStorage) {
       setListTasks(listTasksStorage);
     }
@@ -25,7 +25,7 @@ export default function ToDo() {
     const lastId =
       listTasks.length > 0 ? listTasks[listTasks.length - 1].id : 1;
 
-    const newListTasks = listTasks.map((task) => task);
+    const newListTasks = structuredClone(listTasks);
     newListTasks.push({
       id: lastId + 1,
       taskText: values.task,
