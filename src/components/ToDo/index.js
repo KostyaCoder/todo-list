@@ -2,14 +2,19 @@ import Task from "../Task";
 import TaskControl from "../TaskControl";
 import style from "./ToDo.module.scss";
 import { Form, Formik } from "formik";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TASK_SCHEMA } from "../../utils/validation/taskValidation";
 
 const initialValues = { task: "" };
 
 export default function ToDo() {
+  const [listTasks, setListTasks] = useState([]);
+  useEffect(() => {
   const listTasksStorage = JSON.parse(localStorage.getItem("listTasks"));
-  const [listTasks, setListTasks] = useState(listTasksStorage);
+    if (listTasksStorage) {
+      setListTasks(listTasksStorage);
+    }
+  }, []);
 
   function updateData(newListTasks) {
     setListTasks(newListTasks);
