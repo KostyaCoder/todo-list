@@ -15,13 +15,10 @@ export default function Task(props) {
   });
 
   return (
-    <div className={classNamesAdd}>
-      <p className={style.text}>{taskText}</p>
+    <ul className={classNamesAdd}>
+      <li className={style.text}>{taskText}</li>
       {!isDone && (
-        <button
-          className={style.btn}
-          onClick={() => handleClickExecute(id)}
-        >
+        <button className={style.btn} onClick={() => handleClickExecute(id)}>
           <img src={doneIcon} alt="done button" />
         </button>
       )}
@@ -29,6 +26,6 @@ export default function Task(props) {
       <button className={style.btn} onClick={() => handleClickCancle(id)}>
         <img src={deleteIcon} alt="delete button" />
       </button>
-    </div>
+    </ul>
   );
 }
