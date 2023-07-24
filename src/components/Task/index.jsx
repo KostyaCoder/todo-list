@@ -23,7 +23,10 @@ export default function Task(props) {
         </button>
       )}
 
-      <button className={style.btn} onClick={() => handleClickCancle(id)}>
+      <button
+        className={classNames(style.btn, style.greedBtnDelete)}
+        onClick={() => handleClickCancle(id)}
+      >
         <img src={deleteIcon} alt="delete button" />
       </button>
     </ul>

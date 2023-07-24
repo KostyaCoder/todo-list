@@ -37,3 +37,7 @@ $backgroundColor: rgb(197, 225, 229);
   background-color: $backgroundColor;
   color: black;
 }
+
+.greedBtnDelete{
+  grid-column-start: 3;
+}
